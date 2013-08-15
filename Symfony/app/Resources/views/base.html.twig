@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html"; charset=utf-8" />
+        <title>{% block title %}Planner{% endblock %} - Planner</title>
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        {##}
+            {% block stylesheets %}
+                {% stylesheets 'bundles/planner/MetroUI/css/modern.css' filter='cssrewrite'  %}
+                    <link rel="stylesheet" href="{{ asset_url }}" />
+                {% endstylesheets %}
+            {% endblock %}
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+        {##}
+    </head>
+
+    <body class="metrouicss"  >
+        {% block javascripts %}
+            {% javascripts '@PlannerBundle/Resources/public/js/index.js' %}
+                <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
+
+            <div class="page">
+                <div class="page-header">
+                    <div class="page-header-content bg-color-lighten">
+                        {%block header%}<div><h1>Planner</h1></div> {%endblock%}
+                    </div>
+                </div>
+
+                <div class="page-region" style="text-align: center">
+                    {%block login%}{%endblock%}
+                    <div class="page-region-content">
+                            {% block body %}
+                            {% endblock %}
+                    </div>
+                </div>
+            </div>
+    </body>
+</html>

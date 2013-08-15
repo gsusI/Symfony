@@ -1,0 +1,39 @@
+{% extends '::base.html.twig' %}
+
+        {#{% block javascripts %}
+            {% javascripts '@PlannerBundle/Resources/public/MetroUI/javascript/dialog.js' %}
+                <script type="text/javascript" src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+
+            <script>$(document).ready(function() {
+                    $.Dialog({
+                        'title': 'Login',
+                        'content': '{%block fos_user_content %}{% endblock %}',
+                        'draggable': true,
+                        'overlay': true,
+                        'closeButton': true,
+                        'buttonsAlign': 'right',
+                        'keepOpened': true,
+                        'position': {
+                            'zone': 'right'
+                        },
+                        'buttons': {
+                            'Cancel': {
+                                'action': function() {
+                                }
+                            }
+                        }
+                    });
+                });
+            </script>
+        {% endblock %}#}
+
+{% block title %}Login{% endblock %}
+
+{% block login %}
+<div style="text-align: center; height: 100px; width: 800px; margin-top: 50px;border-radius: 30px" class="border-color-blueLight">
+    <div style="vertical-align: central; clear: both">
+        {%block fos_user_content %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}
